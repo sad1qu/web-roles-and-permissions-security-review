@@ -1,19 +1,16 @@
-# Web Application Pentest Report – Roles and Permissions Issues
+# Web Application Pentest Report – Roles and Permissions Security Review
 
 ## Overview
-Ten raport opisuje problemy bezpieczeństwa związane z nieprawidłową obsługą ról użytkowników i uprawnień w aplikacji webowej.
+Ten raport opisuje problemy bezpieczeństwa związane z obsługą ról użytkowników, uprawnień oraz dostępem do funkcji administracyjnych w aplikacji webowej.
 
 ## Scope
-Zakres testów obejmował:
-- dostęp użytkowników do funkcji administracyjnych
-- weryfikację ról użytkowników przy wykonywaniu akcji
-- możliwość zmiany ról oraz uprawnień użytkowników
+Zakres testów obejmował dostęp do funkcji administracyjnych oraz weryfikację roli użytkownika przy wykonywaniu wrażliwych akcji.
 
 ## Identified Issues
-Aplikacja nie weryfikuje ról użytkowników przy każdej akcji, co może umożliwiać zwykłym użytkownikom dostęp do funkcji administracyjnych, w tym modyfikowanie danych, zarządzanie innymi użytkownikami oraz zmianę własnych uprawnień.
+Aplikacja nie weryfikuje roli użytkownika przy każdej wykonywanej akcji, co umożliwia dostęp do funkcji administracyjnych użytkownikom bez odpowiednich uprawnień.
 
 ## Impact
-Nieprawidłowa kontrola ról może prowadzić do eskalacji uprawnień, utraty kontroli nad aplikacją oraz nieautoryzowanego dostępu do danych i funkcji administracyjnych, co stanowi istotne ryzyko dla bezpieczeństwa systemu i użytkowników.
+Brak prawidłowej weryfikacji ról może prowadzić do eskalacji uprawnień, nieautoryzowanych zmian w aplikacji oraz utraty kontroli nad danymi i funkcjami systemu, co stanowi istotne ryzyko dla bezpieczeństwa użytkowników i organizacji.
 
 ## Recommendations
-Aplikacja powinna każdorazowo weryfikować role i uprawnienia użytkownika po stronie serwera przed wykonaniem każdej wrażliwej operacji. Funkcje administracyjne oraz zmiana ról powinny być dostępne wyłącznie dla uprawnionych użytkowników.
+Aplikacja powinna każdorazowo weryfikować rolę użytkownika po stronie serwera przed wykonaniem każdej wrażliwej akcji, zamiast polegać wyłącznie na ograniczeniach w interfejsie użytkownika, które mogą zostać łatwo pominięte.
